@@ -1,0 +1,2371 @@
+/*
+ * Author       : subatestingacnt
+ * Generated on : 23-Apr-2025 17:43:48
+ * Version      : 1.0
+ */
+ application "Library Management App"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "Asia/Kolkata"
+ 	time format = "24-hr"
+ 	forms
+	{
+		form Authors
+		{
+			success message = "Author Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Author_Name
+			(
+				type = picklist	
+				displayname = "BOOK Name"
+				values  = Book_Management.ID
+    			displayformat = [Book_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Author_Name1
+			(
+				type = picklist	
+				displayname = "Author Name"
+				values  = Book_Management.ID
+    			displayformat = [Author_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Book_Management
+		{
+			displayname = "Book Management"
+			success message = "Book Management Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			must have Book_Name
+			(
+    			type = text
+				displayname = "Book Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Author_Name
+			(
+    			type = text
+				displayname = "Author Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Book_Code
+			(
+				type = number
+				displayname = "Book Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Book_Image
+			(
+    			type = image
+				displayname = "Book Image"
+				source  = file
+				aspect ratio = original
+				camera = primary
+				show gallery = true
+				switch camera = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Date_field
+			(
+    			type = date
+				displayname = "Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Categories_Books
+		{
+			displayname = "Categories & Books"
+			success message = "Data Added Successfully!"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			BOOK_Name
+			(
+				type = picklist	
+				displayname = "BOOK Name"
+				values  = Book_Management.ID
+    			displayformat = [Book_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div>Book Image<br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Child_Books
+		{
+			displayname = "Child Books"
+			success message = "Child Book Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Name
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			File_upload
+			(
+    			type = upload file
+				displayname = "File upload"
+				browse = local_drive
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Copy_of_Search_help
+		{
+			displayname = "Copy of Search help"
+			store data in zc = false
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Dropdown
+			(
+				type = picklist
+				displayname = "Drop Down"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Dropdown1
+			(
+				type = picklist
+				displayname = "Drop Down"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+	
+			actions
+			{
+				Submit
+				(
+   					type = submit
+   					displayname = "Submit"
+				)
+				Reset
+				(
+   					type = reset
+   					displayname = "Reset"
+				)
+			}
+		}
+		form MemberShip_Details
+		{
+			displayname = "MemberShip Details"
+			success message = "Membership Detail Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			must have Member_Name
+			(
+    			type = name
+				displayname = "Member Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+	     			 visibility = false
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			must have unique Membership_Code
+			(
+				type = number
+				displayname = "Membership Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have unique Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			must have unique Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Address
+			(
+    			type = address
+     			capture_coordinates = true
+     			adjust_using_map = false
+     			address_line_1
+     			(
+	     			  type = address_line_1
+	     			  displayname = "Address Line 1"
+     			) 
+     			address_line_2
+     			(
+	     			  type = address_line_2
+	     			  displayname = "Address Line 2"
+	     			 visibility = false
+     			) 
+     			district_city
+     			(
+	     			  type = district_city
+	     			  displayname = "City / District"
+     			) 
+     			state_province
+     			(
+	     			  type = state_province
+	     			  displayname = "State / Province"
+     			) 
+     			postal_Code
+     			(
+	     			  type = postal_Code
+	     			  displayname = "Postal Code"
+	     			 visibility = false
+     			) 
+     			country
+     			(
+	     			  type = country
+	     			  displayname = "Country"
+	     			 visibility = false
+     			) 
+     			latitude
+     			(
+	     			  type = latitude
+	     			  displayname = "latitude"
+	     			 visibility = false
+     			) 
+     			longitude
+     			(
+	     			  type = longitude
+	     			  displayname = "longitude"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Date_field
+			(
+    			type = date
+				displayname = "Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Orders
+		{
+			success message = "Order Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Name
+			(
+    			type = name
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Choose_Products
+			(
+				type = picklist	
+				displayname = "Choose Product"
+				values  = Products.ID
+    			displayformat = [Product]
+				sortorder = ascending
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div>Image<br /></div>"
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Products
+		{
+			success message = "Product Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Product
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Image_Url
+			(
+    			type = url
+				displayname = "Image Url"
+				enable  linkname
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Image
+			(
+    			type = image
+				source  = file
+				aspect ratio = original
+				camera = primary
+				show gallery = true
+				switch camera = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Visitors_Details
+		{
+			displayname = "Visitors Details"
+			success message = "Data Added Successfully!"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Visitors_Name
+			(
+    			type = name
+				displayname = "Visitors Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Visitor_Count
+			(
+				type = number
+				displayname = "Visitor Count"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Visitors_Address
+			(
+    			type = address
+				displayname = "Visitors Address"
+     			capture_coordinates = true
+     			adjust_using_map = false
+     			address_line_1
+     			(
+	     			  type = address_line_1
+	     			  displayname = "Address Line 1"
+     			) 
+     			address_line_2
+     			(
+	     			  type = address_line_2
+	     			  displayname = "Address Line 2"
+	     			 visibility = false
+     			) 
+     			district_city
+     			(
+	     			  type = district_city
+	     			  displayname = "City / District"
+     			) 
+     			state_province
+     			(
+	     			  type = state_province
+	     			  displayname = "State / Province"
+     			) 
+     			postal_Code
+     			(
+	     			  type = postal_Code
+	     			  displayname = "Postal Code"
+	     			 visibility = false
+     			) 
+     			country
+     			(
+	     			  type = country
+	     			  displayname = "Country"
+	     			 visibility = false
+     			) 
+     			latitude
+     			(
+	     			  type = latitude
+	     			  displayname = "latitude"
+	     			 visibility = false
+     			) 
+     			longitude
+     			(
+	     			  type = longitude
+	     			  displayname = "longitude"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Date_of_visit
+			(
+    			type = date
+				displayname = "Date of visit"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><b>Thank you !Happy Visit....​</b><br /></div><div><br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		print template
+			{
+				test
+				{
+							content = {"pageNumberOption":null,"orientation":"null","images":[{"fileName":"","imageId":"","imageType":"","fileId":""},{"fileName":"","imageId":"","imageType":"","fileId":""},{"fileName":"","imageId":"","imageType":"","fileId":""},{"fileName":"","imageId":"","imageType":"","fileId":""}],"imageId":"","isFooterEnabled":false,"containerStyle":"","templateStyle":"text-align: left; width: 793.7px; margin: 0px auto; padding: 30px","version":"2","layout":"1","mainLayout":[{"elements":[{"type":"columns","element":{"split":"100","id":"u_elem_7551029999999981","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"Fields":[{"Label_Name":"Visitors_Name"}],"id":"u_elem_7551019999999995","content":"<div style=\"\">\n   <p><font\n        size=\"3\">Dear&nbsp;<span>${Visitors_Name}<\/span><span style=\"color: rgb(0, 0, 0); font-family: Lato, Arimo, sans-serif; font-size: 16px; font-weight: 400; font-style: normal\">&nbsp;<\/span><span><span>,<\/span><\/span><\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551059999999986","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_755105","fields":[],"content":"<div style=\"\">\n   <br />\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551069999999995","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7551069999999995","fields":[],"content":"<div style=\"\" spellcheck=\"false\">\n   <h1\n      style=\"text-align: center\"><font color=\"#51b46e\">Thank you for visiting our Library!<\/font><\/h1>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_755108999999999","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7551079999999981","fields":[],"content":"<div style=\"\">\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_75511","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_755108999999999","fields":[],"content":"<div style=\"\">\n   <p style=\"text-align: center\"><font size=\"3\">Please find your account details below :<\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_75511","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_75511","fields":[],"content":"<div style=\"\">\n   <br />\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551109999999986","elemStyle":"background-color: rgb(250, 250, 250)","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_755148999999999","fields":[],"content":"<div style=\"\">\n   <p><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_75515","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"Fields":[{"Label_Name":"Visitor_Count"}],"id":"u_elem_4445582999999998","content":"<div style=\"background: rgba(0, 0, 0, 0); padding: 0px\">\n   <p\n      style=\"color: rgb(0, 0, 0); font-weight: 400; font-style: normal; text-align: left\"><font\n        style=\"font-size: 16px\">TRACK ID :&nbsp;<span>${Visitor_Count}<\/span><span style=\"color: rgb(0, 0, 0); font-family: Lato, Arimo, sans-serif; font-size: 16px; font-weight: 400; font-style: normal\">&nbsp;<\/span><\/font><\/p>\n  <\/div>"}},{"type":"columns","element":{"split":"50,50","id":"u_elem_16734040000000014","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"Fields":[{"Label_Name":"Visitors_Name"}],"id":"u_elem_16733980000000005","content":"<div style=\"background: rgba(0, 0, 0, 0); padding: 0px\">\n   <p\n      style=\"color: rgb(0, 0, 0); font-weight: 400; font-style: normal; text-align: left\"><font\n        style=\"font-size: 16px\">NAME:&nbsp;<span>${Visitors_Name}<\/span><span style=\"color: rgb(0, 0, 0); font-family: Lato, Arimo, sans-serif; font-size: 16px; font-weight: 400; font-style: normal\">&nbsp;<\/span><\/font><\/p>\n  <\/div>"}},{"type":"text","element":{"Fields":[{"Label_Name":"Phone_Number"}],"id":"u_elem_19833230000000005","content":"<div style=\"background: rgba(0, 0, 0, 0); padding: 0px\">\n   <p\n      style=\"color: rgb(0, 0, 0); font-weight: 400; font-style: normal; text-align: left\"><font\n        style=\"font-size: 16px\">PHONE NUMBER :&nbsp;<span>${Phone_Number}<\/span><span style=\"color: rgb(0, 0, 0); font-family: Lato, Arimo, sans-serif; font-size: 16px; font-weight: 400; font-style: normal\">&nbsp;<\/span><\/font><\/p>\n  <\/div>"}},{"type":"text","element":{"Fields":[{"Label_Name":"Date_of_visit"}],"id":"u_elem_22582490000000014","content":"<div style=\"background: rgba(0, 0, 0, 0); padding: 0px\">\n   <p\n      style=\"color: rgb(0, 0, 0); font-weight: 400; font-style: normal; text-align: left\"><font\n        style=\"font-size: 16px\">DATE :&nbsp;<span>${Date_of_visit}<\/span><span style=\"color: rgb(0, 0, 0); font-family: Lato, Arimo, sans-serif; font-size: 16px; font-weight: 400; font-style: normal\">&nbsp;<\/span><\/font><\/p>\n  <\/div>"}}]},{"colElements":[{"type":"text","element":{"id":"u_elem_755148999999999","fields":[],"content":"<div style=\"\">\n   <br />\n  <\/div>"}}]}]}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551509999999986","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7551509999999986","fields":[],"content":"<div style=\"\">\n   <p><font size=\"3\">With our new and refreshing design, it's simpler than ever, to build your business apps. Over the next few days you'll be interacting with our support team who will assist and help you get the most out of your Zoho Creator account and set you up to start building your very own first business application.&nbsp;&nbsp;<\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551519999999995","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7551519999999995","fields":[],"content":"<div style=\"\">\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7551529999999981","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7551529999999981","fields":[],"content":"<div style=\"\">\n   <p><font size=\"3\">We make sure you get what you want! Happy App Building!!<\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_755153999999999","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_755153999999999","fields":[],"content":"<div style=\"\">\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_755155","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_755155","fields":[],"content":"<div style=\"\">\n   <p><font size=\"3\">We look forward to assist you!<\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7552219999999995","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_75522","fields":[],"content":"<div style=\"\">\n   <br />\n   <br />\n   <br />\n   <br />\n   <br />\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_7552229999999981","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_7552219999999995","fields":[],"content":"<div style=\"\">\n   <p><font size=\"3\">Best Regards,<\/font><\/p>\n  <\/div>"}}]}]}},{"type":"columns","element":{"split":"100","id":"u_elem_755223999999999","elemStyle":"","collayouts":[{"colElements":[{"type":"image","element":{"imageId":"","size":"NONE","src":"https://static.zohocdn.com/creator/appbuilder/images/print-templates/notification-sign1.17b84a962521acffc2a0fa87123ee5f5.png","captionMargin":"0px auto","alt":"","caption":"","selectFormCompId":"","id":"u_elem_7552229999999981","align":"left","elemStyle":"border: 0px solid rgb(169, 169, 169); margin-top: 5px; padding-left: 8px; width: 85px","formCompId":""}}]}]}}],"id":1}],"resize":"A4","header":{"imageId":"","elements":[{"type":"columns","element":{"split":"23,54,23","id":"u_elem_755033999999999","elemStyle":"","collayouts":[{"colElements":[{"type":"text","element":{"id":"u_elem_75509","fields":[],"content":"<div style=\"\">\n   <p><br /><\/p>\n  <\/div>"}}]},{"colElements":[{"type":"columns","element":{"split":"25,75","id":"u_elem_7550929999999981","elemStyle":"","collayouts":[{"colElements":[{"type":"image","element":{"imageId":"","size":"NONE","src":"https://static.zohocdn.com/creator/appbuilder/images/print-templates/z-logo-green.91cc40399e72c75c2f556d8d09d78ba9.png","captionMargin":"0px auto","alt":"","caption":"","selectFormCompId":"","id":"u_elem_75510","align":"left","elemStyle":"border: 0px solid rgb(169, 169, 169); margin-top: 5px; padding-left: 8px; width: 84px","formCompId":""}},{"type":"text","element":{"id":"u_elem_75510","fields":[],"content":"<div style=\"\">\n   <p><br /><\/p>\n  <\/div>"}}]},{"colElements":[{"id":"u_elem_19619493362099301","type":"fields","element":{"valueStyle":"width: 50%","valueTextStyle":"font-size: 36px; padding-top: 10px","fieldLayoutType":"1","labelText":"--Select Field--","wrapperStyle":"","labelStyle":"width: 50%; display: none","Select_Field":true,"formCompId":"0","labelTextStyle":""}}]}]}}]},{"colElements":[{"type":"text","element":{"id":"u_elem_7551009999999986","fields":[],"content":"<div style=\"\">\n   <p><br /><\/p>\n  <\/div>"}}]}]}}],"style":"border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255)","bgImg":""},"themeFont":"lato","isHeaderEnabled":true}
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Book_Management
+		{
+			displayName = "All Book Management"
+			show all rows from Book_Management    
+			(
+				Book_Name as "Book Name"
+				Book_Image as "Book Image"
+				Date_field as "Date"
+				Book_Code as "Book Code"
+				Author_Name as "Author Name"
+			)
+		}
+		default list All_Membership_Details
+		{
+			displayName = "All Membership Details"
+			show all rows from MemberShip_Details    
+			(
+				Member_Name  as "Member Name"
+	 			(
+	      			displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 			)
+				Email
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Address 
+	 			(
+	      			displayformat = [address_line_1+""+address_line_2+""+district_city+""+state_province+""+postal_Code+""+country]
+	      			enable = Link_to_Map,Show_As_Text
+	 			)
+				Date_field as "Date"
+				Membership_Code as "Membership Code"
+			)
+		}
+		default list All_Orders
+		{
+			displayName = "All Orders"
+			show all rows from Orders    
+			(
+				Email
+				Name 
+	 			(
+	      			displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 			)
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Choose_Products as "Choose Product"
+			)
+		}
+		default list All_Products
+		{
+			displayName = "All Products"
+			show all rows from Products    
+			(
+				Product
+				Image
+				Image_Url as "Image Url"
+			)
+		}
+		default list All_Authors
+		{
+			displayName = "All Authors"
+			show all rows from Authors    
+			(
+				Author_Name as "BOOK Name"
+				Author_Name1 as "Author Name"
+			)
+		}
+		default list Categories_Books_Report
+		{
+			displayName = "Categories & Books Report"
+			show all rows from Categories_Books    
+			(
+				BOOK_Name as "BOOK Name"
+			)
+		}
+		default list Visitors_Details_Report
+		{
+			displayName = "Visitors Details Report"
+			print template = test
+			show all rows from Visitors_Details    
+			(
+				Visitors_Name  as "Visitors Name"
+	 			(
+	      			displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 			)
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Visitors_Address  as "Visitors Address"
+	 			(
+	      			displayformat = [address_line_1+""+address_line_2+""+district_city+""+state_province+""+postal_Code+""+country]
+	      			enable = Link_to_Map,Show_As_Text
+	 			)
+				Date_of_visit as "Date of visit"
+				Visitor_Count as "Visitor Count"
+				Email
+			)
+		}
+		default list All_Child_Books
+		{
+			displayName = "All Child Books"
+			show all rows from Child_Books    
+			(
+				File_upload as "File upload"
+				Name
+			)
+		}
+	}
+	pages
+	{
+		page Book_Tracker_Details(string Email, string Name)
+		{
+			displayname = "ONLINE LIBRARY"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet2' elementName=\"HTML Snippet 1\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet2()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\nfunction searchBooks() {\n    let input = document.getElementById(&apos;searchBox&apos;).value.toLowerCase();\n    let books = document.querySelectorAll(&apos;.book-item&apos;); \/\/ Adjust selector based on your structure\n\n    books.forEach(book =&gt; {\n        let title = book.querySelector(&quot;.title&quot;).textContent.toLowerCase();\n        if (title.includes(input)) {\n            book.style.display = &quot;block&quot;;\n        } else {\n            book.style.display = &quot;none&quot;;\n        }\n    });\n}\n*{\n\tmargin: 0px;\n\twidth: auto;\n\tpadding: 0px;\n\tbox-sizing: border-box;\n\tfont-family: &apos;poppins&apos;,Arial, Helvetica, sans-serif;\n}\nbody {\n            font-family: Arial, sans-serif;\n            margin: 0;\n            padding: 0;\n            background-color: #75beeb;\n        }\n        .header {\n            background-color: #333;\n            color: white;\n            padding: 10px 20px;\n            text-align: center;\n        }\n        .navbar {\n            display: flex;\n            justify-content: center;\n            background-color: #444;\n            padding: 10px 0;\n        }\n        .navbar a {\n            color: white;\n            padding: 10px 20px;\n            text-decoration: none;\n        }\n        .navbar a:hover {\n            background-color: #555;\n        }\n        .search-container {\n            text-align: center;\n            margin: 20px 0;\n        }\n        .search-container input[type=&quot;search&quot;] {\n            padding: 8px;\n            width: 50%;\n            border: 1px solid #ccc;\n            border-radius: 5px;\n        }\n        .search-container button {\n            padding: 8px 15px;\n            border: none;\n            background-color: #28a745;\n            color: white;\n            border-radius: 5px;\n            cursor: pointer;\n        }\n        .search-container button:hover {\n            background-color: #218838;\n        }\n        .content {\n            padding: 20px;\n            text-align: center;\n        }\n.symbol button\n{\n\tpadding: 8px;\n\tmargin: 6px;\n\tbackground-color: #ffffff;\n\tborder: 1px solid rgb(185, 179, 179);\n\tborder-radius: 8px;\n\tcolor: rgb(39, 78, 145);\n\tcursor: pointer;\n}\n\n.symbol select\n{\n\tpadding: 8px;\n\tmargin: 6px;\n\tbackground-color: none;\n\tborder: 1px solid rgb(185, 179, 179);\n\tborder-radius: 8px;\n\tcolor: rgb(0,0,0);\n}\n.symbol select:hover\n{\n\tbackground-color: #99f1f2;\n}\n\n.middle\n{\n\tbackground-color: #f8f8f8; \n\tpadding: 0px 0px 30px 10px;\n}\n\n.middle div h1\n{\n\tpadding: 20px 0px;\n\tfont-weight: 100;\n\tletter-spacing: 0.5px;\n}\n\n.images\n{\n\tdisplay: flex;\n}\n\n.images img {\n    border-radius: 0; \n    width: 150px;\n    height: 150px;\n    margin-right: 40px;\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n    object-fit: cover;\n\tdisplay: flex;\n}\n.images h4\n{\n\t\n\tfont-weight: 300;\n\tfont-size: large;\n\tletter-spacing: 0.5px;\n\tpadding: 10px 50px;\n\tcolor: #363636;\n\n}\n.images1\n{\n\tdisplay: flex;\n}\n\n.images1 img\n{\n\tborder-radius: 50%;\n\twidth: 150px;\n\theight: 150px;\n\tmargin-right: 40px ;\n\tbox-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.images1 h4\n{\n\t\n\tfont-weight: 300;\n\tfont-size: large;\n\tletter-spacing: 0.5px;\n\talign-items: center;\n\tpadding: 0px 50px;\n\tcolor: #363636;\n\n}\n\n.vellore h1\n{\n\tpadding: 20px 0px;\n\tfont-weight: 300;\n\tletter-spacing: 1px;\n\t\n}\n\n.restaurants\n{\n\tdisplay: flex;\n}\n\n.restaurants img\n{\n\twidth: 328px;\n\theight: 248px;\n\tborder-radius: 12px;\n\tmargin: 0px 20px;\n\tcursor: pointer;\n}\n\n.subashm\n{\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n\n.subashm p\n{\n\tfont-weight: 300px;\n\tfont-size: large;\n\tcolor: black;\n\tborder-radius: 6px;\n\t\n}\n.subashm1\n{\n\tcolor: rgb(105, 105, 105);\n\tpadding-top: 10px;\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n.subash\n{\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n\n.subash p\n{\n\tfont-weight: 300px;\n\tfont-size: large;\n\tcolor: black;\n\tborder-radius: 6px;\n\t\n}\n.subash1\n{\n\tcolor: rgb(105, 105, 105);\n\tpadding-top: 10px;\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n\n.suba\n{\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n\n.suba p\n{\n\tfont-weight: 300px;\n\tfont-size: large;\n\tcolor: black;\n\tborder-radius: 6px;\n\t\n}\n\n.suba1\n{\n\tcolor: rgb(105, 105, 105);\n\tpadding-top: 10px;\n\tdisplay: flex ;\n\tmargin: 0px 20px;\n}\n\n.new\n{\n\tdisplay: flex;\n}\n\n.new img\n{\n\twidth: 48px;\n\theight: 18px;\n\tborder-radius: 0px;\n}\n\n.images2\n{\n\tdisplay: flex;\n}\n\n.images2 img\n{\n\twidth: 150px;\n\theight: 100px;\n}\n\n.images2 button\n{\n\tfont-weight: 500px;\n\tfont-size: 15px;\n\twidth: 93.77px;\n\theight: 30px;\n\tmargin-top: 30px;\n\tborder: 1px solid rgb(189, 187, 187);\n\tborder-radius: 6px;\n\toutline: none;\n}\n\n.button1\n{\n\tdisplay: flex;\n\tfloat: left;\n\tmargin: 0px 700px;\n}\n\n.end\n{\n\tbackground-color: #f8f8f8;  \n\tpadding: 10px;\n}\n\n.images2 h1\n{\n\tfont-style: italic;\n\tfont-weight: 1000;\n\tpadding: 10px;\n\n}\n\n.footer\n{\n\tdisplay: flex;\n}\n\n.footer h4\n{\n\tletter-spacing: 2px;\n\tfont-weight: 600;\n\tfont-size: 15px;\n\tpadding: 10px 0px;\n\tcolor: black;\n}\n\n.footer li\n{\n\tfont-size: 15px;\n\tletter-spacing: 0.5px;\n\tcolor: #363636;\n\tpadding: 4px;\n\ttext-decoration: none;\n\ttext-transform: capitalize;\n\tlist-style: none;\n\tcursor: pointer;\n\n}\n\n.socialmedia span\n{\n\tbackground-color: black;\n\tcolor: white;\n\tpadding: 10px;\n\tborder-radius: 50%;\n}\n\n.mean img\n{\n\tborder-radius: 6px;\n}\n\n\n\n.footer .mean\n{\n\tmargin-left: 80px;\n}\n\n.end p\n{\n\tmargin-left: 400px;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;header&quot;&gt;\n        &lt;h1&gt;Online Library&lt;\/h1&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;navbar&quot;&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Page:Book_Tracker_Details&quot;&gt;Home&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app#Form:Categories_Books&quot;&gt;Categories&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Report:All_Authors&quot;&gt;Authors&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app#Dashboard&quot;&gt;Contact&lt;\/a&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;content&quot;&gt;\n        &lt;h2&gt;Welcome to Our Library&lt;\/h2&gt;\n        &lt;p&gt;Explore a vast collection of books from various genres and authors.&lt;\/p&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;symbol&quot;&gt;\n\n\t\t&lt;select name=&quot;&quot; id=&quot;Select&quot;&gt;\n\t\t\t&lt;option value=&quot;&quot;&gt;\n\t\t\t\tTop Books&lt;\/option&gt;\n\t\t\t&lt;option value=&quot;&quot;&gt;\n\t\t\t\tHistory Books&lt;\/option&gt;\n\t\t\t&lt;option value=&quot;&quot;&gt;\n\t\t\t\tComics&lt;\/option&gt;\n\t\t\t&lt;option value=&quot;&quot;&gt;\n\t\t\t\tWars&lt;\/option&gt;\n\t\t\t&lt;option value=&quot;&quot;&gt;\n\t\t\t\tIndia Litrature&lt;\/option&gt;\t\n\t\t&lt;\/select&gt;\n\t&lt;\/div&gt;\n    &lt;br&gt;\n    &lt;br&gt;\n\t&lt;p&gt;&lt;h4&gt;LibraryThing is completely free.\n\t&lt;br&gt;\n\t&lt;br&gt;\n          &lt;li&gt; Add books, movies and music from Amazon, the Library of Congress and 4,941 other libraries.&lt;\/li&gt;\n\t\t  &lt;br&gt;\n           &lt;li&gt;Track your reading progress, rate and review.&lt;\/li&gt;\n\t\t   &lt;br&gt;\n           &lt;li&gt;See detailed charts and stats about your library and reading life.&lt;\/li&gt;\n\t\t   &lt;br&gt;\n           &lt;li&gt;Find your new favorite book with personalized recommendations.&lt;\/li&gt;&lt;\/h4&gt;&lt;\/p&gt;\n    &lt;div class=&quot;middle&quot;&gt;\n\t\t&lt;div&gt;\n\t\t\t&lt;h1&gt;Last Years Top Sales &amp; Viewed Books&lt;\/h1&gt;&lt;\/div&gt;\n\t\t&lt;div class=&quot;images&quot;&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/dorkdiariesbooks.com\/images\/9781442449633.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1913419657.01._SX180_SCLZZZZZZZ_.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1250835674.01._SX180_SCLZZZZZZZ_.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1250266106.01._SX180_SCLZZZZZZZ_.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/thecomicbookstore.in\/wp-content\/uploads\/2025\/02\/TCBS8706-scaled.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/6713068-M.jpg&quot;&gt;&lt;h4&gt;FREE&lt;\/h4&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t&lt;\/div&gt;\n\t&lt;!--Best food part--&gt;\n    &lt;div class=&quot;vellore&quot;&gt;\n\t\t&lt;div&gt;\n\t\t\t&lt;h1&gt;Best Sells in Chennai&lt;\/h1&gt;\n\t\t&lt;\/div&gt;\n\t\t&lt;div class=&quot;restaurants&quot;&gt;\n\t\t\t&lt;div class=&quot;foods&quot;&gt;\n\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/1513120-L.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t&lt;span\n\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;10%\n\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div class=&quot;subash&quot;&gt;\n\t\t\t\t\t&lt;p&gt;Max Brand&lt;\/p&gt;\n\t\t\t\t\t&lt;p\n\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t4.0 &amp;#9733;&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div class=&quot;subash1&quot;&gt;\n\n\t\t\t\t\t&lt;p&gt;Thriller,Travel&lt;\/p&gt;\n\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;300 for one&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;a href=&quot;https:\/\/openlibrary.org\/books\/OL27195098M\/Ariol&quot;&gt;\n    &lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/10658230-L.jpg&quot; alt=&quot;Ariol Book Cover&quot;&gt;\n&lt;\/a&gt;\t\t\n\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t&lt;span\n\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;70%\n\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div class=&quot;subashm&quot;&gt;\n\t\t\t\t&lt;p&gt;Arial (Top Dog)&lt;\/p&gt;\n\t\t\t\t\t&lt;p\n\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t4.5&amp;#9733;&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div class=&quot;subashm1&quot;&gt;\n\n\t\t\t\t\t&lt;p&gt;kids,comics,fun,dogs&lt;\/p&gt;\n\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;200 for one&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;a href=&quot;https:\/\/dorkdiariesbooks.com\/dork-diaries-omg.html&quot;&gt;\n\t\t&lt;img src=&quot;https:\/\/dorkdiariesbooks.com\/images\/9781442487710.jpg&quot; alt=&quot;&quot;&gt;&lt;\/a&gt;\n\t\t\t\t&lt;div class=&quot;suba&quot;&gt;\n\t\t\t\t\t&lt;p&gt;Dork Diaries&lt;\/p&gt;\n\t\t\t\t\t&lt;p\n\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t4.3&amp;#9733;&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div class=&quot;suba1&quot;&gt;\n\t\t\t\t\t&lt;p&gt;Womnens,kids,etc...&lt;\/p&gt;\n\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;100 for one&lt;\/p&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t&lt;br&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t&lt;\/div&gt;\n\t\t&lt;br&gt;\n\t\t&lt;br&gt;\n\n\t\t&lt;div class=&quot;chennai&quot;&gt;\n\n\t\t\t&lt;div class=&quot;restaurants&quot;&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/368945-M.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;30%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subash&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Pacific Vortex&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t4.3&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subash1&quot;&gt;\n\n\t\t\t\t\t\t&lt;p&gt;Adventure,Run etc...&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;100 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t&lt;a href =&quot;https:\/\/crimereads.com\/murder-in-the-stacks-mysteries-that-take-place-in-bookstores\/&quot;&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/s26162.pcdn.co\/wp-content\/uploads\/sites\/3\/2019\/03\/You-Caroline-Kepnes-193x300.jpg&quot; alt=&quot;&quot;&gt;&lt;\/a&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;10%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subashm&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Short Fiction&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t4.3&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subashm1&quot;&gt;\n\n\t\t\t\t\t\t&lt;p&gt;Childrens,Fun,etc..&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;99 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t\t&lt;br&gt;\n\n\t\t\t\t\t&lt;div class=&quot;new&quot;&gt;\n\t\t\t\t\t\t&lt;img src=&quot;https:\/\/openlibrary.org\/static\/images\/openlibrary-logo-tighter.svg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin: -5px 0px 0px 0px; font-size: 12px; color: rgb(105, 105, 105);&quot;&gt;Most Commonly Viewd by Childrens &lt;br&gt;Limited Edition&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/14634297-M.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;50%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;suba&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Ghost Stories&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t4.1&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;suba1&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Thriller, brazilan, etc...&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;290 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t\t&lt;br&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t\t&lt;br&gt;\n\t\t&lt;br&gt;\n&lt;h1&gt;Romace &amp; Love Books&lt;\/h1&gt;\n\t\t&lt;div class=&quot;chennai&quot;&gt;\n\n\t\t\t&lt;div class=&quot;restaurants&quot;&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/10045823-L.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;50%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subash&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;MOLLY&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t       4.0&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subash1&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Romance,Love, etc...&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;250 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/10807977-M.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;30%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subashm&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;Society Nurse&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t4.1&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;subashm1&quot;&gt;\n\n\t\t\t\t\t\t&lt;p&gt;by jennie..&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;200 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t\t&lt;div&gt;\n\t\t\t\t\t&lt;img src=&quot;https:\/\/covers.openlibrary.org\/b\/id\/14501701-M.jpg&quot; alt=&quot;&quot;&gt;\n\t\t\t\t\t&lt;div class=&quot;text-block&quot;&gt;\n\t\t\t\t\t\t&lt;span\n\t\t\t\t\t\t\tstyle=&quot;background-color: red;\n\t\t\t\t\t\t\tposition: absolute; margin: -30px 0px 0px 20px; font-family: Okra, Helvetica, sans-serif; font-size: 14px; background-color: #256fef; color: white; font-weight: 500; padding: 0px 6px;&quot;&gt;50%\n\t\t\t\t\t\t\toffer&lt;\/span&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;suba&quot;&gt;\n\t\t\t\t\t\t&lt;p&gt;No Small Storm&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p\n\t\t\t\t\t\t\tstyle=&quot;background-color: #267e3e; margin-left: 170px; padding: 0px 4px; color: white; font-weight: 0px;&quot;&gt;\n\t\t\t\t\t\t\t4.7&amp;#9733;&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;suba1&quot;&gt;\n\t\t\t\t\t&lt;p&gt;by Anne Mateer (Italy)..&lt;\/p&gt;\n\t\t\t\t\t\t&lt;p style=&quot;margin-left: 70px;&quot;&gt;&amp;#8377;350 for one&lt;\/p&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;hr style=&quot;width: 330px; margin-left: 20px;&quot;&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\n\t&lt;\/div&gt;\n\t&lt;div class=&quot;last&quot;&gt;\n\t\t&lt;div class=&quot;images2&quot;&gt;\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;h1&gt;Library Book Management&lt;\/h1&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;div style=&quot;margin-left: 700px; display: flex;&quot;&gt;\n\t\t\t\t&lt;button&gt;India&amp;#129171;&lt;\/button&gt;\n\t\t\t\t&lt;button style=&quot;margin-left: 10px;&quot;&gt;&amp;#127760;English&amp;#129171;&lt;\/button&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\n\t\t&lt;div class=&quot;footer&quot;&gt;\n\t\t\t&lt;div class=&quot;about&quot;&gt;\n\t\t\t\t&lt;h4&gt;ABOUT US&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Who We Are&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Blog&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Work With Us&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Investor Relations&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Report Fraud&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Press Kit&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Contact Us&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;Develop&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Developer Center&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;API Documentation&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Bulk Data Dumps&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Writing Bots&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t\t&lt;h4&gt;FOR Enquires&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;Contact With Us&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\t\t\t\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\n\t\t\t\t\t&lt;h4&gt;FOR ENTERPRISES&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;OnlineLibrary For Enterprise&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;LEARN MORE&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Privacy&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Security&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Terms&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Sitemap&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t\t\t&lt;hr&gt;\n\t\t\t&lt;br&gt;\n\t&lt;p&gt;\n\t\tBy continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 \u00A9 Subash\u2122 Ltd. All rights reserved.&lt;\/p&gt;\t\t\t\n\t&lt;\/div&gt;\n\n&lt;\/body&gt;\n\n&lt;\/html&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet()\ncontent\n&lt;%{\n\t%&gt;\n&lt;div class=&quot;container&quot;&gt;\n        &lt;h1&gt;Libraray Management Details&lt;\/h1&gt;\n        &lt;p&gt;Welcome, &lt;span id=&quot;userName&quot;&gt;Loading...&lt;\/span&gt;!&lt;\/p&gt;\n        &lt;p&gt;This is a simple HTML page embedded within Zoho Creator.&lt;\/p&gt;\n        &lt;p&gt;&quot;I have included the reference site link below, which I used in developing this project.&quot; &lt;\/p&gt;\n        &lt;a href=&quot;https:\/\/openlibrary.org\/&quot; target=&quot;_blank&quot;&gt;Open Library&lt;\/a&gt;\n\t\t&lt;br&gt;\n\t\t&lt;a href=&quot;https:\/\/www.librarything.com\/&quot; target=&quot;_blank&quot;&gt;LibraryThing&lt;\/a&gt;\n    &lt;\/div&gt;\n&lt;style&gt;\n      .container {\n            text-align: center;\n            padding: 40px;\n            max-width: 800px;\n            margin: 0 auto;\n            background-color: #ffffff;\n            border-radius: 10px;\n            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\n        }\n\t\t h1 {\n            color: #4CAF50;\n            font-size: 36px;\n        }\n\n&lt;\/style&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+			script
+			{
+				/* Write your script logic here. You can assign values to the page variables you've created in the previous tab. Enter 'input.' to list the created page variables. */
+				fet = MemberShip_Details[Email == zoho.adminuserid];
+				input.Name = fet.Member_Name;
+				input.Email = fet.Email;
+			}
+		}
+		page New_htmlview
+		{
+			displayname = "Visitor Form"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet3' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet3()\ncontent\n&lt;%{\n\t%&gt;\n&lt;div elName=&apos;zc-component&apos; formLinkName= &apos;Visitors_Details&apos;\nparams= &apos;zc_Header=false&amp;amp;zc_SuccMsg=Data Added\nSuccessfully!&amp;ampp;zc_SubmitVal=Submit&amp;amp;zc_ResetVal=Reset&apos;&gt;....&lt;\/div&gt;\n&lt;style&gt;\n.zcform_Visitors_Details .formContainer \n{\nbackground-image:url(&quot;https:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c9\/Zoho_headquarters_in_chennai.jpg&quot;);\nbackground-size:cover;\t\nbackground-color:transparent;\n}\n.zcform_Visitors_Details .zc-footer-wrapper{\n\tbackground-color: transparent;\n\n&lt;\\style&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Books
+		{
+			displayname = "Books"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet4' elementName=\"HTML Snippet 2\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet4()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\nh1 {\n    color: #333;\n    font-size: 36px;\n    margin-bottom: 50px;\n\ttext-align:center;\n}\n\n.book-list {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n\tbackground-color: #5497d1;\n}\n\n.book-item {\n    background-color: #5497d1;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    margin: 15px;\n    padding: 20px;\n    width: 200px;\n    text-align: center;\n    border-radius: 8px;\n    transition: transform 0.3s ease;\n}\n.card {\n    background-color: #f8d7da; \n    border-radius: 10px;\n    padding: 10px;\n    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);\n}\n.book-item:hover {\n    transform: translateY(-10px);\n}\n\n.book-item img {\n    width: 100%;\n    height: 250px;\n    object-fit: cover;\n    border-radius: 8px;\n}\n\n.book-title {\n    font-size: 20px;\n    margin-top: 15px;\n    color: black;\n}\n\n.book-author {\n    font-size: 16px;\n    color: black;\n    margin-top: 5px;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;library-container&quot;&gt;\n        &lt;h1&gt;Comics&lt;\/h1&gt;\n        &lt;div class=&quot;book-list&quot;&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n&lt;a href=&quot;https:\/\/thecomicbookstore.in\/product\/batman-the-long-halloween\/&quot;&gt;\n&lt;img src=&quot;https:\/\/thecomicbookstore.in\/wp-content\/uploads\/2023\/12\/TCBS5321.jpg&quot; onerror=&quot;this.style.display=&apos;none&apos;&quot;&gt;\n&lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;BATMAN&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author:DC&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/thecomicbookstore.in\/product\/injustice-gods-among-us-year-one-complete-coll\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/thecomicbookstore.in\/wp-content\/uploads\/2022\/03\/TCBS1375.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;INJUSTICE &lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author:DC&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;ttps:\/\/www.midtowncomics.com&quot;&gt;\n                &lt;img src=&quot;https:\/\/www.midtowncomics.com\/images\/PRODUCT\/FUL\/2401520_ful.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;AVENGERS VOL4&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author:Stan LEE&lt;\/p&gt;\n            &lt;\/div&gt;\n\t\t\t &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/thecomicbookstore.in\/product\/tony-stark-iron-man-12\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/thecomicbookstore.in\/wp-content\/uploads\/2025\/01\/TCBS8176.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;IRON MAN -X&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author:Stan LEE&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/thecomicbookstore.in\/product\/deadpool-6-geof-darrow-regular-cover\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/thecomicbookstore.in\/wp-content\/uploads\/2025\/01\/TCBS8093-scaled.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Deadpool: Geof Darrow Regular&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author:Stan LEE&lt;\/p&gt;\n            &lt;\/div&gt;\n        &lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;\/body&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet7' elementName=\"HTML Snippet 1\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet7()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\nh1 {\n    color: #333;\n    font-size: 36px;\n    margin-bottom: 50px;\n    text-align: center;\n}\n\n.book-list {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    background-color: #f8d7da; \n}\n\n.book-item {\n    background-color: #f8d7da; \n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    margin: 15px;\n    padding: 20px;\n    width: 200px;\n    text-align: center;\n    border-radius: 8px;\n    transition: transform 0.3s ease;\n}\n\n.book-item:hover {\n    transform: translateY(-10px);\n}\n\n.book-item img {\n    width: 100%;\n    height: 250px;\n    object-fit: cover;\n    border-radius: 8px;\n    background-color: red;\n\tmargin-color : black;\n\tborder: 3px solid black;\n}\n\n.book-title {\n    font-size: 20px;\n    margin-top: 15px;\n    color: black;\n}\n\n.book-author {\n    font-size: 16px;\n    color: black;\n    margin-top: 5px;\n}\n\n.book-item img[onerror] {\n    content: url(&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;);\n}\n&lt;\/style&gt;\n\n&lt;body&gt;\n    &lt;div class=&quot;library-container&quot;&gt;\n        &lt;h1&gt;RARE &amp; MOST VIEWED BOOKS&lt;\/h1&gt;\n        &lt;div class=&quot;book-list&quot;&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n                &lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                    &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/0593296672.01._SX180_SCLZZZZZZZ_.jpg&quot; \n                         onerror=&quot;this.src=&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 1&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: John Doe&lt;\/p&gt;\n            &lt;\/div&gt;\n\n            &lt;div class=&quot;book-item&quot;&gt;\n                &lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                    &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/0593183223.01._SX180_SCLZZZZZZZ_.jpg&quot; \n                         onerror=&quot;this.src=&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 2&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Jane Smith&lt;\/p&gt;\n            &lt;\/div&gt;\n\n            &lt;div class=&quot;book-item&quot;&gt;\n                &lt;a href=&quot;https:\/\/www.investableoceans.com\/products\/ship-of-gold-in-the-deep-blue-sea&quot;&gt;\n                    &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1524745170.01._SX180_SCLZZZZZZZ_.jpg&quot; \n                         onerror=&quot;this.src=&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 3&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Samuel Johnson&lt;\/p&gt;\n            &lt;\/div&gt;\n\n            &lt;div class=&quot;book-item&quot;&gt;\n                &lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                    &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1250318033.01._SX180_SCLZZZZZZZ_.jpg&quot; \n                         onerror=&quot;this.src=&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 2&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Jane Smith&lt;\/p&gt;\n            &lt;\/div&gt;\n\n            &lt;div class=&quot;book-item&quot;&gt;\n                &lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                    &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/0593183169.01._SX180_SCLZZZZZZZ_.jpg&quot; \n                         onerror=&quot;this.src=&apos;https:\/\/via.placeholder.com\/200x250?text=No+Image&apos;&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 4&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Emily Brown&lt;\/p&gt;\n            &lt;\/div&gt;\n        &lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;\/body&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet5' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet5()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\nh1 {\n    color: #333;\n    font-size: 36px;\n    margin-bottom: 50px;\n\ttext-align:center;\n}\n\n.book-list {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n\tbackground-color: #5497d1;\n}\n\n.book-item {\n    background-color: #5497d1;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n    margin: 15px;\n    padding: 20px;\n    width: 200px;\n    text-align: center;\n    border-radius: 8px;\n    transition: transform 0.3s ease;\n}\n.card {\n    background-color: #f8d7da; \n    border-radius: 10px;\n    padding: 10px;\n    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);\n}\n.book-item:hover {\n    transform: translateY(-10px);\n}\n\n.book-item img {\n    width: 100%;\n    height: 250px;\n    object-fit: cover;\n    border-radius: 8px;\n}\n\n.book-title {\n    font-size: 20px;\n    margin-top: 15px;\n    color: black;\n}\n\n.book-author {\n    font-size: 16px;\n    color: black;\n    margin-top: 5px;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;library-container&quot;&gt;\n        &lt;h1&gt;TOP COLLECTIONS&lt;\/h1&gt;\n        &lt;div class=&quot;book-list&quot;&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n&lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n&lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/1526655896.01._SX600_SCLZZZZZZZ_.jpg&quot; onerror=&quot;this.style.display=&apos;none&apos;&quot;&gt;\n&lt;\/a&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 1&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: John Doe&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/pics.cdn.librarything.com\/picsizes\/e5\/05\/e505445868f6214596c704169414345412f5945_v5.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 2&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Jane Smith&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/www.investableoceans.com\/products\/ship-of-gold-in-the-deep-blue-sea&quot;&gt;\n                &lt;img src=&quot;https:\/\/pics.cdn.librarything.com\/picsizes\/10\/20\/1\u2026b-h1270-w900-pv25_596a6e496d774345412f5945_v5.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 3&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Samuel Johnson&lt;\/p&gt;\n            &lt;\/div&gt;\n\t\t\t &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/150118881X.01._SX180_SCLZZZZZZZ_.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;One BY One &lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Ruth Ware&lt;\/p&gt;\n            &lt;\/div&gt;\n            &lt;div class=&quot;book-item&quot;&gt;\n\t\t\t&lt;a href=&quot;https:\/\/www.librarything.com\/&quot;&gt;\n                &lt;img src=&quot;https:\/\/images-na.ssl-images-amazon.com\/images\/P\/0802121012.01._SX900_SY1270_SCLZZZZZZZ_.jpg&quot; alt=&quot;Book Cover&quot;&gt;\n                &lt;h3 class=&quot;book-title&quot;&gt;Book Title 5&lt;\/h3&gt;\n                &lt;p class=&quot;book-author&quot;&gt;Author: Emily Brown&lt;\/p&gt;\n            &lt;\/div&gt;\n        &lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;\/body&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Booktracking
+		{
+			displayname = "Booktracking"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet6' elementName=\"HTML Snippet 1\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet6()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n    &lt;meta charset=&quot;UTF-8&quot;&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;\n    &lt;title&gt;Book Search&lt;\/title&gt;\n    &lt;style&gt;\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            text-align: center;\n        }\n        #searchBox {\n            width: 50%;\n            padding: 10px;\n            font-size: 16px;\n            margin-bottom: 20px;\n        }\n        #bookList {\n            list-style: none;\n            padding: 0;\n            width: 50%;\n            margin: auto;\n        }\n        .book {\n            padding: 10px;\n            background: #f1f1f1;\n            margin: 5px 0;\n            border-radius: 5px;\n        }\n    &lt;\/style&gt;\n&lt;\/head&gt;\n&lt;body&gt;\n\n    &lt;h2&gt;Search for a Book&lt;\/h2&gt;\n    &lt;input type=&quot;text&quot; id=&quot;searchBox&quot; placeholder=&quot;Search books by title...&quot; onkeyup=&quot;searchBooks()&quot;&gt;\n\n    &lt;ul id=&quot;bookList&quot;&gt;\n        &lt;li class=&quot;book&quot;&gt;The Great Gatsby&lt;\/li&gt;\n        &lt;li class=&quot;book&quot;&gt;To Kill a Mockingbird&lt;\/li&gt;\n        &lt;li class=&quot;book&quot;&gt;1984&lt;\/li&gt;\n        &lt;li class=&quot;book&quot;&gt;Moby Dick&lt;\/li&gt;\n        &lt;li class=&quot;book&quot;&gt;Pride and Prejudice&lt;\/li&gt;\n        &lt;li class=&quot;book&quot;&gt;The Catcher in the Rye&lt;\/li&gt;\n    &lt;\/ul&gt;\n\n    &lt;script&gt;\n        function searchBooks() {\n            let input = document.getElementById(&apos;searchBox&apos;).value.toLowerCase();\n            let books = document.querySelectorAll(&apos;.book&apos;);\n\n            books.forEach(book =&gt; {\n                let title = book.textContent.toLowerCase();\n                if (title.includes(input)) {\n                    book.style.display = &quot;block&quot;;\n                } else {\n                    book.style.display = &quot;none&quot;;\n                }\n            });\n        }\n    &lt;\/script&gt;\n\n&lt;\/body&gt;\n&lt;\/html&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet1' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet1()\ncontent\n&lt;%{\n\timageDataa = Child_Books[ID != 0];\n\tuniqueBooks = list();\n\t%&gt;\n&lt;style&gt;\n.body{\n   font-family: Arial, sans-serif;\n   margin: 0;\n   padding: 0;\n   background-color: #e9f3f5;\n   }\n.header {\n   background-color:#57b59e;\n   color: white;\n   padding: 10px 20px;\n   text-align: center;\n}\n.navbar {\n   display: flex;\n   justify-content: center;\n   background-color:#5a2d70;\n   padding: 10px 0;\n   }\n.navbar a {\n   color: white;\n   padding: 10px 20px;\n   text-decoration: none;\n}\n.navbar a:hover {\n   background-color: #57b3a0;\n}\n.container {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: 20px;\n    padding: 20px;\n    background-color: #e1e2e3;\n}\n.book-card {\n    width: 180px;\n    background: linear-gradient(135deg, #ffffff, #e6e6e6);\n    padding: 15px;\n    border-radius: 10px;\n    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);\n    text-align: center;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n.book-card:hover {\n    transform: scale(1.05);\n    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);\n}\n.book-card img {\n    width: 100%;\n    height: auto;\n    border-radius: 5px;\n}\n.book-title {\n    font-weight: bold;\n    font-size: 1rem;\n    color: #333;\n    margin-top: 10px;\n}\n.content {\n    padding: 20px;\n    text-align: center;\n}\n.overlay {\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0);\n    z-index: 999;\n}\n.footer {\n    display: flex;\n    justify-content: space-between; \n    flex-wrap: wrap;\n    padding: 20px 50px;\n    max-width: 1200px;\n    margin: auto;\n\t\n}\n.footer h4 {\n    letter-spacing: 2px;\n    font-weight: 600;\n    font-size: 15px;\n    padding-bottom: 10px;\n    color: black;\n}\n.footer ul {\n    padding: 0;\n    margin: 0;\n}\n.footer li {\n    font-size: 15px;\n    letter-spacing: 0.5px;\n    color: #363636;\n    padding: 5px 0;\n    text-decoration: none;\n    text-transform: capitalize;\n    list-style: none;\n    cursor: pointer;\n}\n.footer .column {\n    flex: 1; \n    min-width: 220px;\n    margin-right: 30px; \n}\n.footer .mean {\n    margin-left: 0;\n}\n.end p {\n    text-align: center;\n    margin: 20px 0;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;header&quot;&gt;\n        &lt;h1&gt;Special Edition For Kids&lt;\/h1&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;content&quot;&gt;\n        &lt;h2&gt;Books For Childrens&lt;\/h2&gt;\n        &lt;p&gt;Explore a vast collection of books from various genres and authors.&lt;\/p&gt;\n    &lt;\/div&gt;\n&lt;div class=&quot;container&quot; id=&quot;bookContainer&quot;&gt;\n&lt;%\n\tfor each  rec in imageDataa\n\t{\n\t\tbookImagee = rec.Name;\n\t\tif(uniqueBooks.contains(bookImagee) == false)\n\t\t{\n\t\t\tuniqueBooks.add(bookImagee);\n\t\t\timagelnk = rec.File_upload;\n\t\t\timagelnk = imagelnk + &quot;?title=&quot; + bookImagee;\n\t\t\timagelnk = imagelnk.getprefix(&quot;\\&quot; lowqual&quot;).getsuffix(&quot;&lt;img src = \\&quot;&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;https:\/\/creator.zoho.in\/sharedBy\/appLinkName\/&quot;,&quot;https:\/\/creator.zoho.in&quot; + zoho.appuri);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;viewLinkName&quot;,&quot;All_Child_Books&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;fieldName&quot;,&quot;File_upload&quot;);\n\t\t\t%&gt;\n&lt;div class=&quot;book-card&quot; data-title=&quot;&lt;%=bookImagee.toLowerCase()%&gt;&quot; data-img=&quot;&lt;%=imagelnk%&gt;&quot;&gt;\n        &lt;img src=&quot;&lt;%=imagelnk%&gt;&quot; alt=&quot;&lt;%=bookImagee%&gt;&quot;&gt;\n        &lt;div class=&quot;book-title&quot;&gt;&lt;%=bookImagee%&gt;&lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;%\n\t\t}\n\t}\n\t%&gt;\n&lt;\/div&gt;\n\t\t&lt;div class=&quot;footer&quot;&gt;\n\t\t\t&lt;div class=&quot;about&quot;&gt;\n\t\t\t\t&lt;h4&gt;ABOUT US&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Who We Are&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Blog&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Work With Us&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Investor Relations&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Report Fraud&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Press Kit&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Contact Us&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;Develop&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Developer Center&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;API Documentation&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Bulk Data Dumps&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Writing Bots&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t\t&lt;h4&gt;FOR Enquires&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;Contact With Us&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\t\t\t\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\n\t\t\t\t\t&lt;h4&gt;FOR ENTERPRISES&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;OnlineLibrary For Enterprise&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;LEARN MORE&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Privacy&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Security&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Terms&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Sitemap&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t\t\t&lt;hr&gt;\n\t\t\t&lt;br&gt;\n\t&lt;p&gt;\n\t\tBy continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2058 \u00A9 Subash\u2122 Ltd. All rights reserved.&lt;\/p&gt;\t\t\t\n\t&lt;\/div&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page auto_update_images
+		{
+			displayname = "auto update images"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet8' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet8()\ncontent\n&lt;%{\n\timageData = Products[ID != 0];\n\tuniqueBooks = list();\n\t%&gt;\n&lt;style&gt;\n.body{\n   font-family: Arial, sans-serif;\n   margin: 0;\n   padding: 0;\n   background-color: #e9f3f5;\n   }\n.header {\n   background-color:#57b59e;\n   color: white;\n   padding: 10px 20px;\n   text-align: center;\n}\n.navbar {\n   display: flex;\n   justify-content: center;\n   background-color:#5a2d70;\n   padding: 10px 0;\n   }\n.navbar a {\n   color: white;\n   padding: 10px 20px;\n   text-decoration: none;\n}\n.navbar a:hover {\n   background-color: #57b3a0;\n}\n.container {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: 20px;\n    padding: 20px;\n    background-color: #e1e2e3;\n}\n.book-card {\n    width: 180px;\n    background: linear-gradient(135deg, #ffffff, #e6e6e6);\n    padding: 15px;\n    border-radius: 10px;\n    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);\n    text-align: center;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n.book-card:hover {\n    transform: scale(1.05);\n    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);\n}\n.book-card img {\n    width: 100%;\n    height: auto;\n    border-radius: 5px;\n}\n.book-title {\n    font-weight: bold;\n    font-size: 1rem;\n    color: #333;\n    margin-top: 10px;\n}\n.content {\n    padding: 20px;\n    text-align: center;\n}\n.overlay {\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0);\n    z-index: 999;\n}\n.footer {\n    display: flex;\n    justify-content: space-between; \n    flex-wrap: wrap;\n    padding: 20px 50px;\n    max-width: 1200px;\n    margin: auto;\n\t\n}\n.footer h4 {\n    letter-spacing: 2px;\n    font-weight: 600;\n    font-size: 15px;\n    padding-bottom: 10px;\n    color: black;\n}\n.footer ul {\n    padding: 0;\n    margin: 0;\n}\n.footer li {\n    font-size: 15px;\n    letter-spacing: 0.5px;\n    color: #363636;\n    padding: 5px 0;\n    text-decoration: none;\n    text-transform: capitalize;\n    list-style: none;\n    cursor: pointer;\n}\n.footer .column {\n    flex: 1; \n    min-width: 220px;\n    margin-right: 30px; \n}\n.footer .mean {\n    margin-left: 0;\n}\n.end p {\n    text-align: center;\n    margin: 20px 0;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;header&quot;&gt;\n        &lt;h1&gt;Online Library Management&lt;\/h1&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;navbar&quot;&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Page:Books&quot;&gt;Home&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Form:MemberShip_Details&quot;&gt;Membership&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Report:All_Authors&quot;&gt;Authors&lt;\/a&gt;\n        &lt;a href=&quot;https:\/\/creatorapp.zoho.in\/subatestingacnt\/library-management-app\/#Page:Book_Tracker_Details&quot;&gt;Next Page&lt;\/a&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;content&quot;&gt;\n        &lt;h2&gt;Welcome to Our Library&lt;\/h2&gt;\n        &lt;p&gt;Explore a vast collection of books from various genres and authors.&lt;\/p&gt;\n    &lt;\/div&gt;\n&lt;div class=&quot;container&quot; id=&quot;bookContainer&quot;&gt;\n&lt;%\n\tfor each  rec in imageData\n\t{\n\t\tbookImage = rec.Product;\n\t\tif(uniqueBooks.contains(bookImage) == false)\n\t\t{\n\t\t\tuniqueBooks.add(bookImage);\n\t\t\timagelnk = rec.Image;\n\t\t\timagelnk = imagelnk + &quot;?title=&quot; + bookImage;\n\t\t\timagelnk = imagelnk.getprefix(&quot;\\&quot; lowqual&quot;).getsuffix(&quot;&lt;img src = \\&quot;&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;https:\/\/creator.zoho.in\/sharedBy\/appLinkName\/&quot;,&quot;https:\/\/creator.zoho.in&quot; + zoho.appuri);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;viewLinkName&quot;,&quot;All_Products&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;fieldName&quot;,&quot;Image&quot;);\n\t\t\t%&gt;\n&lt;div class=&quot;book-card&quot; data-title=&quot;&lt;%=bookImage.toLowerCase()%&gt;&quot; data-img=&quot;&lt;%=imagelnk%&gt;&quot;&gt;\n        &lt;img src=&quot;&lt;%=imagelnk%&gt;&quot; alt=&quot;&lt;%=bookImage%&gt;&quot;&gt;\n        &lt;div class=&quot;book-title&quot;&gt;&lt;%=bookImage%&gt;&lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;%\n\t\t}\n\t}\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet9' elementName=\"HTML Snippet 1\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet9()\ncontent\n&lt;%{\n\timageDataa = Child_Books[ID != 0];\n\tuniqueBooks = list();\n\t%&gt;\n&lt;style&gt;\n.body{\n   font-family: Arial, sans-serif;\n   margin: 0;\n   padding: 0;\n   background-color: #e9f3f5;\n   }\n.header {\n   background-color:#57b59e;\n   color: white;\n   padding: 10px 20px;\n   text-align: center;\n}\n.navbar {\n   display: flex;\n   justify-content: center;\n   background-color:#5a2d70;\n   padding: 10px 0;\n   }\n.navbar a {\n   color: white;\n   padding: 10px 20px;\n   text-decoration: none;\n}\n.navbar a:hover {\n   background-color: #57b3a0;\n}\n.container {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    gap: 20px;\n    padding: 20px;\n    background-color: #e1e2e3;\n}\n.book-card {\n    width: 180px;\n    background: linear-gradient(135deg, #ffffff, #e6e6e6);\n    padding: 15px;\n    border-radius: 10px;\n    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);\n    text-align: center;\n    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;\n}\n.book-card:hover {\n    transform: scale(1.05);\n    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);\n}\n.book-card img {\n    width: 100%;\n    height: auto;\n    border-radius: 5px;\n}\n.book-title {\n    font-weight: bold;\n    font-size: 1rem;\n    color: #333;\n    margin-top: 10px;\n}\n.content {\n    padding: 20px;\n    text-align: center;\n}\n.overlay {\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0);\n    z-index: 999;\n}\n.footer {\n    display: flex;\n    justify-content: space-between; \n    flex-wrap: wrap;\n    padding: 20px 50px;\n    max-width: 1200px;\n    margin: auto;\n\t\n}\n.footer h4 {\n    letter-spacing: 2px;\n    font-weight: 600;\n    font-size: 15px;\n    padding-bottom: 10px;\n    color: black;\n}\n.footer ul {\n    padding: 0;\n    margin: 0;\n}\n.footer li {\n    font-size: 15px;\n    letter-spacing: 0.5px;\n    color: #363636;\n    padding: 5px 0;\n    text-decoration: none;\n    text-transform: capitalize;\n    list-style: none;\n    cursor: pointer;\n}\n.footer .column {\n    flex: 1; \n    min-width: 220px;\n    margin-right: 30px; \n}\n.footer .mean {\n    margin-left: 0;\n}\n.end p {\n    text-align: center;\n    margin: 20px 0;\n}\n&lt;\/style&gt;\n&lt;body&gt;\n    &lt;div class=&quot;header&quot;&gt;\n        &lt;h1&gt;Special Edition For Kids&lt;\/h1&gt;\n    &lt;\/div&gt;\n    &lt;div class=&quot;content&quot;&gt;\n        &lt;h2&gt;Books For Childrens&lt;\/h2&gt;\n        &lt;p&gt;Explore a vast collection of books from various genres and authors.&lt;\/p&gt;\n    &lt;\/div&gt;\n&lt;div class=&quot;container&quot; id=&quot;bookContainer&quot;&gt;\n&lt;%\n\tfor each  rec in imageDataa\n\t{\n\t\tbookImagee = rec.Name;\n\t\tif(uniqueBooks.contains(bookImagee) == false)\n\t\t{\n\t\t\tuniqueBooks.add(bookImagee);\n\t\t\timagelnk = rec.File_upload;\n\t\t\timagelnk = imagelnk + &quot;?title=&quot; + bookImagee;\n\t\t\timagelnk = imagelnk.getprefix(&quot;\\&quot; lowqual&quot;).getsuffix(&quot;&lt;img src = \\&quot;&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;https:\/\/creator.zoho.in\/sharedBy\/appLinkName\/&quot;,&quot;https:\/\/creator.zoho.in&quot; + zoho.appuri);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;viewLinkName&quot;,&quot;All_Child_Books&quot;);\n\t\t\timagelnk = imagelnk.replaceAll(&quot;fieldName&quot;,&quot;File_upload&quot;);\n\t\t\t%&gt;\n&lt;div class=&quot;book-card&quot; data-title=&quot;&lt;%=bookImagee.toLowerCase()%&gt;&quot; data-img=&quot;&lt;%=imagelnk%&gt;&quot;&gt;\n        &lt;img src=&quot;&lt;%=imagelnk%&gt;&quot; alt=&quot;&lt;%=bookImagee%&gt;&quot;&gt;\n        &lt;div class=&quot;book-title&quot;&gt;&lt;%=bookImagee%&gt;&lt;\/div&gt;\n    &lt;\/div&gt;\n&lt;%\n\t\t}\n\t}\n\t%&gt;\n&lt;\/div&gt;\n\t\t&lt;div class=&quot;footer&quot;&gt;\n\t\t\t&lt;div class=&quot;about&quot;&gt;\n\t\t\t\t&lt;h4&gt;ABOUT US&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Who We Are&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Blog&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Work With Us&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Investor Relations&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Report Fraud&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Press Kit&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Contact Us&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;Develop&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Developer Center&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;API Documentation&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Bulk Data Dumps&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Writing Bots&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t\t&lt;h4&gt;FOR Enquires&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;Contact With Us&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\t\t\t\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\n\t\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\n\t\t\t\t\t&lt;h4&gt;FOR ENTERPRISES&lt;\/h4&gt;\n\t\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t\t&lt;li&gt;OnlineLibrary For Enterprise&lt;\/li&gt;\n\t\t\t\t\t\t&lt;li&gt;Apps For you&lt;\/li&gt;\n\t\t\t\t\t&lt;\/ul&gt;\n\t\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\n\t\t\t&lt;div class=&quot;mean&quot;&gt;\n\t\t\t\t&lt;h4&gt;LEARN MORE&lt;\/h4&gt;\n\t\t\t\t&lt;ul&gt;\n\t\t\t\t\t&lt;li&gt;Privacy&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Security&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Terms&lt;\/li&gt;\n\t\t\t\t\t&lt;li&gt;Sitemap&lt;\/li&gt;\n\t\t\t\t&lt;\/ul&gt;\n\t\t\t&lt;\/div&gt;\n\t\t\t&lt;\/div&gt;\n\t\t&lt;\/div&gt;\n\t\t\t&lt;hr&gt;\n\t\t\t&lt;br&gt;\n\t&lt;p&gt;\n\t\tBy continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2058 \u00A9 Subash\u2122 Ltd. All rights reserved.&lt;\/p&gt;\t\t\t\n\t&lt;\/div&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+	}
+
+
+		 functions
+		 {
+			 Deluge
+			 {
+				 void allowRenewal()
+                 {
+                 }
+				 void new()
+                 {
+                 	imageDataa = Child_Books[ID != 0];
+                 	for each  rec in imageDataa
+                 	{
+                 		bookImagee = rec.Name;
+                 		imagelnk = rec.File_upload;
+                 		imagelnk = imagelnk + "?title=" + bookImagee;
+                 		imagelnk = imagelnk.getprefix("\" lowqual").getsuffix("<img src = \"");
+                 		imagelnk = imagelnk.replaceAll("https://creator.zoho.in/sharedBy/appLinkName/","https://creator.zoho.in" + zoho.appuri);
+                 		imagelnk = imagelnk.replaceAll("viewLinkName","All_Child_Books");
+                 		imagelnk = imagelnk.replaceAll("fieldName","File_upload");
+                 	}
+                 	info bookImagee;
+                 }
+				 void test()
+                 {
+                 	imageData = Products[ID != 0];
+                 	for each  rec in imageData
+                 	{
+                 		//info rec.Image;
+                 		imagelnk = rec.Image;
+                 		imagelnk = imagelnk.getprefix("\" lowqual").getsuffix("<img src = \"");
+                 		imagelnk = imagelnk.replaceAll("https://creator.zoho.in/sharedBy/appLinkName/","https://creator.zoho.in" + zoho.appuri);
+                 		imagelnk = imagelnk.replaceAll("viewLinkName","All_Products");
+                 		imagelnk = imagelnk.replaceAll("fieldName","Image");
+                 		info imagelnk;
+                 	}
+                 }
+				 void testing()
+                 {
+                 	imageData = Products[ID != 0];
+                 	for each  rec in imageData
+                 	{
+                 		imagelnk = rec.Image;
+                 		bookImage = rec.Product;
+                 		imagelnk = imagelnk + "?title=" + bookImage;
+                 		imagelnk = imagelnk.getprefix("\" lowqual").getsuffix("<img src = \"");
+                 		imagelnk = imagelnk.replaceAll("https://creator.zoho.in/sharedBy/appLinkName/","https://creator.zoho.in" + zoho.appuri);
+                 		imagelnk = imagelnk.replaceAll("viewLinkName","All_Products");
+                 		imagelnk = imagelnk.replaceAll("fieldName","Image");
+                 		info bookImage;
+                 	}
+                 }
+				 void Testt()
+                 {
+                 	imaagedata = Child_Books[ID != 0];
+                 	for each  rec in Child_Books
+                 	{
+                 		bookimage = rec;
+                 	}
+                 	info bookimage;
+                 }
+			 }
+		 }
+		workflow
+		{
+		form
+		{
+			Display_Image as "Display Image"
+			{
+				type =  form
+				form = Orders
+				record event = on add or edit
+
+				on user input of Choose_Products
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											displayimg = Products[ID == input.Choose_Products].Image;
+										if(displayimg != null && displayimg != "")
+										{
+											displayimg = displayimg.replaceAll("/sharedBy/appLinkName/",zoho.appuri);
+											displayimg = displayimg.replaceAll("viewLinkName","All_Products");
+											displayimg = displayimg.replaceAll("fieldName","Image");
+											displayimg = displayimg.replaceAll("<img","<img height=200px width=200px");
+										}
+										input.plain = displayimg;
+						)
+					}
+				}
+
+			}
+			update_iimage as "update iimage"
+			{
+				type =  form
+				form = Book_Management
+				record event = on add
+
+				on user input of Book_Image
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											image_url = Book_Management[ID == input.ID].Book_Image.toString();
+						)
+					}
+				}
+
+			}
+			updatename as "updatename"
+			{
+				type =  form
+				form = Authors
+				record event = on add
+
+				on user input of Author_Name
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Author_Name1 = input.Author_Name;
+						)
+					}
+				}
+
+			}
+			update_iimage1 as "update iimage"
+			{
+				type =  form
+				form = Categories_Books
+				record event = on add or edit
+
+				on user input of BOOK_Name
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											displayimg = Book_Management[ID == input.BOOK_Name].Book_Image;
+										if(displayimg != null && displayimg != "")
+										{
+											displayimg = displayimg.replaceAll("/sharedBy/appLinkName/",zoho.appuri);
+											displayimg = displayimg.replaceAll("viewLinkName","All_Book_Management");
+											displayimg = displayimg.replaceAll("fieldName","Book_Image");
+											displayimg = displayimg.replaceAll("<img","<img height=500px width=500px");
+										}
+										input.plain = displayimg;
+						)
+					}
+				}
+
+			}
+			alert_member as "alert member"
+			{
+				type =  form
+				form = MemberShip_Details
+				record event = on add or edit
+
+				on user input of Member_Name
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											entered_name = input.Member_Name.first_name;
+										existing_records = MemberShip_Details[Member_Name.first_name == entered_name];
+										if(existing_records.count() > 0)
+										{
+											alert "This Member Name already exists. Please enter a unique name.";
+											reload;
+										}
+						)
+					}
+				}
+
+			}
+			Upda as "Upda"
+			{
+				type =  form
+				form = Book_Management
+				record event = on add or edit
+
+				on user input of Book_Name
+				{
+				}
+
+			}
+			CREATE_LEAD as "CREATE LEAD"
+			{
+				type =  form
+				form = MemberShip_Details
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											Leadinfo = {"Last_Name":input.Member_Name,"Phone":input.Phone_Number,"Email":input.Email,"Address":input.Address,"Date":input.Date_field,"Account_Name":input.Member_Name};
+										create_leads = zoho.crm.createRecord("Leads",Leadinfo);
+										create_contacts = zoho.crm.createRecord("Contacts",Leadinfo);
+										info create_leads;
+						)
+					}
+				}
+
+			}
+			update as "update"
+			{
+				type =  form
+				form = Book_Management
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// // Check if the user uploaded an image
+										// if(input.Book_Image != null)
+										// {
+										// 	// Fetch the image URL from Zoho Creator
+										// 	imageURL = input.Book_Image.getSuffix(".getdownloadurl");
+										// 	// Store the image URL in a hidden field for later retrieval
+										// 	input.ImageUrl = imageURL;
+										// }
+						)
+					}
+				}
+
+			}
+			phone_alert as "phone alert"
+			{
+				type =  form
+				form = MemberShip_Details
+				record event = on add or edit
+
+				on user input of Phone_Number
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											entered_name = input.Phone_Number;
+										existing_records = MemberShip_Details[Phone_Number == entered_name];
+										if(existing_records.count() > 0)
+										{
+											alert "This Number already exists. Please enter another number.";
+											reload;
+										}
+						)
+					}
+				}
+
+			}
+			update_all as "update all"
+			{
+				type =  form
+				form = Visitors_Details
+				record event = on add or edit
+
+				on user input of Phone_Number
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											rko = Visitors_Details[Phone_Number == input.Phone_Number];
+										if(rko != null)
+										{
+											input.Visitors_Name = rko.Visitors_Name;
+											input.Visitors_Address = rko.Visitors_Address;
+											input.Date_of_visit = rko.Date_of_visit;
+											input.Visitor_Count = rko.Visitor_Count;
+										}
+										else
+										{
+										}
+						)
+					}
+				}
+
+			}
+			PDF as "PDF"
+			{
+				type =  form
+				form = Visitors_Details
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											openUrl(zoho.appuri + "record-pdf/Visitors_Details_Report/" + input.ID,"new window");
+						)
+					}
+				}
+
+			}
+			send_email as "send email"
+			{
+				type =  form
+				form = Visitors_Details
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						sendmail
+						(
+							from : "zoho.adminuserid"
+							to : Email
+							subject : "Visitors Registration conformation"
+							message : "<div>${Visitors_Name.first_name}\"Thanks for Visiting our Online Library Management\" expresses gratitude to users for accessing a digital platform designed for managing library resources. It signifies a welcoming message, encouraging users to explore book catalogs, borrow materials, and utilize various library services efficiently.<br></div><div>${Phone_Number}<br></div><div>${Date_of_visit}<br></div>"
+						)
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+
+	web
+	{
+		forms
+		{
+			form Authors
+			{
+				label placement = left
+			}
+			form Book_Management
+			{
+				label placement = left
+			}
+			form Categories_Books
+			{
+				label placement = left
+			}
+			form Child_Books
+			{
+				label placement = left
+			}
+			form Copy_of_Search_help
+			{
+				label placement = left
+			}
+			form MemberShip_Details
+			{
+				label placement = left
+			}
+			form Orders
+			{
+				label placement = left
+			}
+			form Products
+			{
+				label placement = left
+			}
+			form Visitors_Details
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Book_Management
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Book_Name as "Book Name"
+								Book_Image as "Book Image"
+								Date_field as "Date"
+								Book_Code as "Book Code"
+								Author_Name as "Author Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Book_Name as "Book Name"
+								Book_Image as "Book Image"
+								Date_field as "Date"
+								Book_Code as "Book Code"
+								Author_Name as "Author Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Membership_Details
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Member_Name as "Member Name"
+								Email
+								Phone_Number as "Phone"
+								Address
+								Date_field as "Date"
+								Membership_Code as "Membership Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Member_Name as "Member Name"
+								Email
+								Phone_Number as "Phone"
+								Address
+								Date_field as "Date"
+								Membership_Code as "Membership Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Orders
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Email
+								Name
+								Phone_Number as "Phone"
+								Choose_Products as "Choose Product"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Email
+								Name
+								Phone_Number as "Phone"
+								Choose_Products as "Choose Product"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Products
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Product
+								Image
+								Image_Url as "Image Url"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Product
+								Image
+								Image_Url as "Image Url"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Authors
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Author_Name as "BOOK Name"
+								Author_Name1 as "Author Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Author_Name as "BOOK Name"
+								Author_Name1 as "Author Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Categories_Books_Report
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								BOOK_Name as "BOOK Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								BOOK_Name as "BOOK Name"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report Visitors_Details_Report
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Visitors_Name as "Visitors Name"
+								Phone_Number as "Phone"
+								Visitors_Address as "Visitors Address"
+								Date_of_visit as "Date of visit"
+								Visitor_Count as "Visitor Count"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Visitors_Name as "Visitors Name"
+								Phone_Number as "Phone"
+								Visitors_Address as "Visitors Address"
+								Date_of_visit as "Date of visit"
+								Visitor_Count as "Visitor Count"
+								Email
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Child_Books
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								File_upload as "File upload"
+								Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								File_upload as "File upload"
+								Name
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+		}
+		menu
+		{
+			unused
+			{
+				systemcomponent
+				{
+					type = localization
+					displayname = "Language Selection"
+					icon = "education-language"
+				}
+				systemcomponent
+				{
+					type = connection
+					displayname = "Connection"
+					icon = "tech-2-connection"
+				}
+				systemcomponent
+				{
+					type = approval
+					approval status = pending
+					displayname = "Pending Tasks"
+					icon = "ui-2-hourglass"
+				}
+				systemcomponent
+				{
+					type = approval
+					approval status = completed
+					displayname = "Completed Tasks"
+					icon = "design-todo"
+				}
+				form  Copy_of_Search_help
+				{
+					icon = "tech-desktop"
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+			}
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Dashboard
+				{
+					displayname = "Dashboard"
+					icon = "ui-1-dashboard-half"
+					page Booktracking
+					{
+						icon = "tech-desktop"
+					}
+					page auto_update_images
+					{
+						icon = "tech-2-l-system-update"
+					}
+				}
+				section Book_Management
+				{
+					displayname = "Book Management"
+					icon = "education-books-46"
+					form  Book_Management
+					{
+						icon = "education-books-46"
+					}
+					report All_Book_Management
+					{
+						icon = "tech-desktop"
+					}
+				}
+					page Book_Tracker_Details
+					{
+						icon = "education-book-open"
+					}
+				section Membership_Details
+				{
+					displayname = "Membership Details"
+					icon = "users-2-contacts-44"
+					form  MemberShip_Details
+					{
+						icon = "users-2-contacts-44"
+					}
+					report All_Membership_Details
+					{
+						icon = "tech-desktop"
+					}
+				}
+					page Books
+					{
+						icon = "education-books-46"
+					}
+					page New_htmlview
+					{
+						icon = "users-2-child"
+					}
+				section Orders
+				{
+					displayname = "Orders"
+					icon = "shopping-list"
+					form  Orders
+					{
+						icon = "shopping-list"
+					}
+					report All_Orders
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Products
+				{
+					displayname = "Products"
+					icon = "shopping-gift"
+					form  Products
+					{
+						icon = "shopping-gift"
+					}
+					report All_Products
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Authors
+				{
+					displayname = "Authors"
+					icon = "education-books-46"
+					form  Authors
+					{
+						icon = "education-books-46"
+					}
+					report All_Authors
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Categories_Books
+				{
+					displayname = "Categories & Books"
+					icon = "education-books-46"
+					form  Categories_Books
+					{
+						icon = "education-books-46"
+					}
+					report Categories_Books_Report
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Visitors_Details
+				{
+					displayname = "Visitors Details"
+					icon = "shopping-cart-simple"
+					form  Visitors_Details
+					{
+						icon = "shopping-cart-simple"
+					}
+					report Visitors_Details_Report
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Child_Books
+				{
+					displayname = "Child Books"
+					icon = "education-books-46"
+					form  Child_Books
+					{
+						icon = "education-books-46"
+					}
+					report All_Child_Books
+					{
+						icon = "tech-desktop"
+					}
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+				}
+			}
+		}
+		customize
+		{
+			new theme = 6
+			font = "rubik"
+			color options
+			{
+				menu color = "#ffffff"
+				header color = "#1c97a7"
+				name = "custom_color"
+				brand color = "#1c97a7"
+				type = "custom"
+				sub menu color = "#ffffff"
+				secondaryColor = "#ffffff"
+			}
+			logo
+			{
+				preference = "app_icon"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		forms
+		{
+			form Authors
+			{
+				label placement = auto
+			}
+			form Book_Management
+			{
+				label placement = auto
+			}
+			form Categories_Books
+			{
+				label placement = auto
+			}
+			form Child_Books
+			{
+				label placement = auto
+			}
+			form Copy_of_Search_help
+			{
+				label placement = auto
+			}
+			form MemberShip_Details
+			{
+				label placement = auto
+			}
+			form Orders
+			{
+				label placement = auto
+			}
+			form Products
+			{
+				label placement = auto
+			}
+			form Visitors_Details
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				type = "custom"
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		forms
+		{
+			form Authors
+			{
+				label placement = auto
+			}
+			form Book_Management
+			{
+				label placement = auto
+			}
+			form Categories_Books
+			{
+				label placement = auto
+			}
+			form Child_Books
+			{
+				label placement = auto
+			}
+			form Copy_of_Search_help
+			{
+				label placement = auto
+			}
+			form MemberShip_Details
+			{
+				label placement = auto
+			}
+			form Orders
+			{
+				label placement = auto
+			}
+			form Products
+			{
+				label placement = auto
+			}
+			form Visitors_Details
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				type = "custom"
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
